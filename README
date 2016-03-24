@@ -1,22 +1,104 @@
-. <- Name: customPlugin (Name of top level directory)
+.
+├── gradlePlugin.sh
+├── gradleUser.sh
+├── plugin
+│   ├── build
+│   │   ├── classes
+│   │   │   └── main
+│   │   │       ├── FileNameWrapper.class
+│   │   │       └── org
+│   │   │           └── hampus
+│   │   │               └── android
+│   │   │                   └── packaging
+│   │   │                       ├── AndroidPackagingPlugin$_apply_closure1.class
+│   │   │                       ├── AndroidPackagingPlugin$_apply_closure1$_closure7.class
+│   │   │                       ├── AndroidPackagingPlugin$_apply_closure2.class
+│   │   │                       ├── AndroidPackagingPlugin.class
+│   │   │                       ├── AndroidPackagingPlugin$_onBuildFinished_closure5.class
+│   │   │                       ├── AndroidPackagingPlugin$_onBuildFinished_closure6.class
+│   │   │                       ├── AndroidPackagingPlugin$_onProjectsEvaluated_closure3.class
+│   │   │                       ├── AndroidPackagingPlugin$_onProjectsEvaluated_closure4.class
+│   │   │                       ├── FileUtils.class
+│   │   │                       ├── FileUtils$_collectFilesToMove_closure1.class
+│   │   │                       └── FileUtils$_getLines_closure2.class
+│   │   ├── ivy.xml
+│   │   ├── libs
+│   │   │   └── hampusPlugin-1.0-SNAPSHOT.jar
+│   │   ├── poms
+│   │   │   └── pom-default.xml
+│   │   ├── resources
+│   │   │   └── main
+│   │   │       └── META-INF
+│   │   │           └── gradle-plugins
+│   │   │               └── org.hampus.android.packaging.properties
+│   │   └── tmp
+│   │       ├── compileGroovy
+│   │       │   └── groovy-java-stubs
+│   │       └── jar
+│   │           └── MANIFEST.MF
+│   ├── build.gradle
+│   ├── local.properties
+│   ├── packaging.conf
+│   ├── settings.gradle
+│   └── src
+│       ├── main
+│       │   ├── groovy
+│       │   │   └── org
+│       │   │       └── gradle
+│       │   │           ├── AndroidPackagingPlugin.groovy
+│       │   │           ├── FileNameWrapper.groovy
+│       │   │           └── FileUtils.groovy
+│       │   └── resources
+│       │       └── META-INF
+│       │           └── gradle-plugins
+│       │               └── org.hampus.android.packaging.properties
+│       └── test
+│           └── groovy
+│               └── org
+│                   └── gradle
+│                       └── FileUtilsTest.groovy
+├── README
+├── repo
+│   └── org
+│       └── hampus
+│           └── android
+│               └── packaging
+│                   └── hampusPlugin
+│                       ├── 1.0-SNAPSHOT
+│                       │   ├── hampusPlugin-1.0-20160324.234311-1.jar
+│                       │   ├── hampusPlugin-1.0-20160324.234311-1.jar.md5
+│                       │   ├── hampusPlugin-1.0-20160324.234311-1.jar.sha1
+│                       │   ├── hampusPlugin-1.0-20160324.234311-1.pom
+│                       │   ├── hampusPlugin-1.0-20160324.234311-1.pom.md5
+│                       │   ├── hampusPlugin-1.0-20160324.234311-1.pom.sha1
+│                       │   ├── maven-metadata.xml
+│                       │   ├── maven-metadata.xml.md5
+│                       │   └── maven-metadata.xml.sha1
+│                       ├── maven-metadata.xml
+│                       ├── maven-metadata.xml.md5
+│                       └── maven-metadata.xml.sha1
+├── tmp
+└── user
+    ├── build
+    │   ├── libs
+    │   │   └── user.jar
+    │   └── tmp
+    │       └── jar
+    │           └── MANIFEST.MF
+    ├── build.gradle
+    ├── layout
+    │   ├── a.xml
+    │   └── l1
+    │       ├── b.xml
+    │       └── l2
+    │           └── c.xml
+    ├── packaging.conf
+    └── ref
+        ├── a.xml
+        └── layout
+            └── l1
+                ├── b.xml
+                └── l2
+                    └── c.xml
 
-./consumer/
-	build.gradle 
-	build/libs/
-		consumer.jar	
-
-
-./plugin/
-	build.gradle
-	settings.gradle -> Define ProjectRootName (customPlugin)
-	src/main/groovy/org/gradle/
-		GreetingPlugin.groovy
-		GreetingTask.groovy
-
-	src/main/resources/META-INF/gradle-plugins
-		org.samples.greeting.properties
-
-./repo/org/gradle/customerPlugin
-	1.0-SNAPSHOT	
-
-
+49 directories, 52 files
