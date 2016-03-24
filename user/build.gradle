@@ -1,0 +1,25 @@
+apply plugin: 'maven'
+apply plugin: 'groovy'
+apply plugin: 'org.hampus.android.packaging'
+
+buildscript {
+	repositories {
+		maven {
+			url uri('../repo')
+		}
+		
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath group: 'org.hampus.android.packaging', name: 'hampusPlugin', version: '1.0-SNAPSHOT'
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	'org.codehaus.groovy:groovy-all:2.4.4'
+}

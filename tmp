@@ -1,0 +1,12 @@
+All Collected
+Moved: true
+
+BUILD FAILED
+
+Total time: 3.262 secs
+All that are moved: 
+Moved: /home/hampusballdin/GradleAndroidPlugin/user/layout/l1/a.xml
+Moved: /home/hampusballdin/GradleAndroidPlugin/user/layout/l1/l2/a.xml
+Moved: /home/hampusballdin/GradleAndroidPlugin/user/layout/l1/l2/c.xml
+Moved: /home/hampusballdin/GradleAndroidPlugin/user/layout/l1/b.xml
+Moved Back: true

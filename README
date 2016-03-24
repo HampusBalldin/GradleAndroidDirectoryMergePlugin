@@ -1,0 +1,22 @@
+. <- Name: customPlugin (Name of top level directory)
+
+./consumer/
+	build.gradle 
+	build/libs/
+		consumer.jar	
+
+
+./plugin/
+	build.gradle
+	settings.gradle -> Define ProjectRootName (customPlugin)
+	src/main/groovy/org/gradle/
+		GreetingPlugin.groovy
+		GreetingTask.groovy
+
+	src/main/resources/META-INF/gradle-plugins
+		org.samples.greeting.properties
+
+./repo/org/gradle/customerPlugin
+	1.0-SNAPSHOT	
+
+
