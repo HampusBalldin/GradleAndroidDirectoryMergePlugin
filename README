@@ -1,3 +1,11 @@
+Android Studio does not per default allow sub directories for res/(layout | drawable) directories.
+The problem is that the android build system relies on the fact that all files are present in those
+directories. This fact makes it much harder than it should be to manage files in an Android Studio
+Project.
+This Gradle Plugin simply moves all files into the target directory (e.g. layout) before build, and then moves them back
+after build. The target Directories are specified in the packaging.conf file.
+
+Example File Structure:
 .
 ├── gradlePlugin.sh
 ├── gradleUser.sh
@@ -92,7 +100,7 @@
     │       ├── b.xml
     │       └── l2
     │           └── c.xml
-    ├── packaging.conf
+    ├── packaging.conf <--------------------------------- What Directories to merge
     └── ref
         ├── a.xml
         └── layout
