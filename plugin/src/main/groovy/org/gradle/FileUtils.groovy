@@ -33,20 +33,19 @@ class FileUtils{
 	// Allowed input sequences:
 	// </DIR/>, </DIR>, </DIR/>, <DIR>
 	// All will give <WORKING DIRECTORY>/<DIR>/
+
+	String ILLEGAL_DIR_CHARACTERS = "\\*\\.\"\\/\\\\\\[\\]:;\\|=,"
 	List<String> getLines(){
 		String path = getConfPath()
 		List<String> lines = []
 
 		new File(path).text.split('\n').each { line ->
-			Matcher matcher = line =~ /(^\/([^\/\.]+?)\/$)?(^\/([^\/\.]+?)$)?(^([^\/\.]+?)\/$)?(^([^\/\.]+?)$)?/
-			matcher.find()
-			for(int i = 2; i <= 8; i+=2){
-				String match = ""
-				if( (match = matcher.group(i)) != null){
-					lines << System.getProperty("user.dir") + "/" + match + "/"
-					break
-				}
+			Matcher matcher = line =~ /\/?([^$ILLEGAL_DIR_CHARACTERS]+)\/?/
+			def sb = new StringBuffer()
+			while(matcher.find()) {
+				sb.append(matcher.group(1)).append("/")
 			}
+			lines << System.getProperty("user.dir") + "/" + sb.toString()
 		}
 		return lines
 	}

@@ -51,6 +51,11 @@ class AndroidPackagingPlugin implements Plugin<Project> {
 		def innerWrappedFiles = []
 
 		File srcDir = target.file(targetDirectory)
+		if(!srcDir.isDirectory()){
+			println "$targetDirectory does not exist"
+			return
+		}
+		
 		srcDir.eachFile {
 			utils.collectFilesToMove((File)it, innerMoved, targetDirectory)
 		}
@@ -63,7 +68,6 @@ class AndroidPackagingPlugin implements Plugin<Project> {
 				String alias = fnw.getAlias()
 				if(!fp.equals(alias)){	
 					boolean success = utils.moveFile(fnw.getFilePath(), fnw.getAlias())
-					println "Moved: $success"
 					innerWrappedFiles << fnw
 				}else{
 					println "Do not move file in target dir"
@@ -78,14 +82,11 @@ class AndroidPackagingPlugin implements Plugin<Project> {
 
 	void onBuildFinished(){
 		println "All that are moved: "
-		moved.each {
-			println "Moved: ${it}"
-		}
 		wrappedFiles.each { 
 			String alias = ((FileNameWrapper)it).getAlias()
 			String path = ((FileNameWrapper)it).getFilePath()
 			boolean success = utils.moveFile(alias, path)
-			println "Moved Back: $success"
+			println "Moved: $path \t Moved Back: $success"
 		}
 		println "All Done"
 	}
