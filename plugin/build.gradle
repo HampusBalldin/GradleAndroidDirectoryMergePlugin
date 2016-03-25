@@ -12,7 +12,6 @@ repositories {
 	mavenCentral()
 }
 
-//name = rootProject.name in settings.gradle (same dir as this build.gradle)
 group = 'org.hampus.android.packaging'
 version = '1.0-SNAPSHOT'
 

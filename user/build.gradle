@@ -12,7 +12,7 @@ buildscript {
 	}
 
 	dependencies {
-		classpath group: 'org.hampus.android.packaging', name: 'hampusPlugin', version: '1.0-SNAPSHOT'
+		classpath group: 'org.hampus.android.packaging', name: 'mergeFolders', version: '1.0-SNAPSHOT'
 	}
 }
 
