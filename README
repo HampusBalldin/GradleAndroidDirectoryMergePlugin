@@ -5,6 +5,21 @@ Project.
 This Gradle Plugin simply moves all files into the target directory (e.g. layout) before build, and then moves them back
 after build. The target Directories are specified in the packaging.conf file.
 
+To use, the plugin must be installed in some reposirtory, and included in the android build.gradle, e.g. with:
+
+buildscript {
+	repositories {
+		maven {
+			url uri('<PATH_TO_REPO>')
+		}
+		mavenCentral()
+	}
+	dependencies {
+		classpath group: 'org.hampus.android.packaging', name: 'hampusPlugin', version: '1.0-SNAPSHOT'
+	}
+}
+
+
 Example File Structure:
 .
 ├── gradlePlugin.sh
